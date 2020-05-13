@@ -15,17 +15,16 @@ let eventLoop = threadPool.next()
 let jsonDecoder = JSONDecoder()
 
 let nioFutures = (1 ... 100).map {
-  Post.nioDownload(withId: $0, using: jsonDecoder, on: eventLoop)
+  Post.nioDownload(withId: $0, using: jsonDecoder, on: eventLoop).map {
+    $0.title
+  }
 }
 
 let nioFlattened = EventLoopFuture.whenAllSucceed(nioFutures, on: eventLoop)
 
 PlaygroundPage.current.needsIndefiniteExecution = true
 
-nioFlattened.whenComplete { result in
-  let titles = result.map {
-    $0.map { $0.title }
-  }
+nioFlattened.whenComplete { _ in
   switch titles {
   case let .failure(error):
     print(error)

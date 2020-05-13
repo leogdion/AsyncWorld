@@ -20,6 +20,16 @@ public struct User: Schema {
   public let email: String
 }
 
+public struct AuthoredPost {
+  public let author: User
+  public let post: Post
+
+  public init(author: User, post: Post) {
+    self.author = author
+    self.post = post
+  }
+}
+
 let baseURL = URL(string: "https://jsonplaceholder.typicode.com/")!
 
 public extension Schema {
