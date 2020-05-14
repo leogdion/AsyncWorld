@@ -33,7 +33,7 @@ PlaygroundPage.current.needsIndefiniteExecution = true
 
 gpFlattened.then { posts in
   for aPost in posts {
-    print(aPost.post.title, "by", aPost.author.name)
+    print(aPost.post.id, aPost.post.title, "by", aPost.author.name)
   }
 }.catch { error in
   print("ERROR:", error)

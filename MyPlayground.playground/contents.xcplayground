@@ -1,2 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<playground version='6.0' target-platform='macos'/>
+<playground version='6.0' target-platform='macos'>
+    <pages>
+        <page name='GooglePromises-map-flatten'/>
+        <page name='SwiftNIO2-map-flatten'/>
+        <page name='PromiseKit-map-flatten'/>
+        <page name='Combine'/>
+        <page name='GooglePromises-async-map'/>
+        <page name='SwiftNIO-async-map'/>
+        <page name='PromiseKit-async-map'/>
+    </pages>
+</playground>
