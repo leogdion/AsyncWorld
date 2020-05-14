@@ -6,7 +6,7 @@
         <page name='PromiseKit-map-flatten'/>
         <page name='Combine'/>
         <page name='GooglePromises-async-map'/>
-        <page name='SwiftNIO-async-map'/>
+        <page name='SwiftNIO2-async-map'/>
         <page name='PromiseKit-async-map'/>
     </pages>
 </playground>
