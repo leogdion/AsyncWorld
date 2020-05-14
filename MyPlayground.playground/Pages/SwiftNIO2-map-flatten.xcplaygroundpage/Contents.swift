@@ -24,7 +24,7 @@ let nioFlattened = EventLoopFuture.whenAllSucceed(nioFutures, on: eventLoop)
 
 PlaygroundPage.current.needsIndefiniteExecution = true
 
-nioFlattened.whenComplete { _ in
+nioFlattened.whenComplete { titles in
   switch titles {
   case let .failure(error):
     print(error)
